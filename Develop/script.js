@@ -4,7 +4,7 @@ var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p'
 var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var special = ['!','@','#','$','%','&','+','-','*','/','^'];
 var number = [0,1,2,3,4,5,6,7,8,9];
-var userPreference = [];
+var userPreference = []; //added userPreference and password var here so generatePassword() can get values from initQuestions
 var password;
 
 // Get references to the #generate element
@@ -17,14 +17,11 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
   var passwordText = document.querySelector("#password");
-  var validPromt = initQuestions();
-  if (validPromt){
+  //added valid Promt to prevent if 
+  if (initQuestions (true)){
     var password = generatePassword();
-    
     passwordText.value = password;
-    } else {
-      alert("Please try again.")
-    }
+    } 
 }
 
 
@@ -60,10 +57,9 @@ function initQuestions() {
     }
     if(hasNumber){
       userPreference = userPreference.concat(number);
-    }
-    console.log(userPreference);
-  }
+    } 
   return true;
+  }
 }
 
 function generatePassword() {
