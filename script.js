@@ -5,7 +5,7 @@ var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'
 var special = ['!','@','#','$','%','&','+','-','*','/','^'];
 var number = [0,1,2,3,4,5,6,7,8,9];
 var userPreference = []; //added userPreference and password var here so generatePassword() can get values from initQuestions
-var password;
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
