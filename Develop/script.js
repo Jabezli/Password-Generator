@@ -13,19 +13,15 @@ var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
 // Write password to the #password input
 function writePassword() {
   var passwordText = document.querySelector("#password");
-  //added valid Promt to prevent if 
+  //if initQuesions function returns true, run generatePassword
   if (initQuestions (true)){
     var password = generatePassword();
     passwordText.value = password;
     } 
 }
-
-
-
 
 //I need to ask questions to determine the type of the password. a function to hold all questions would make it easy to follow.
 function initQuestions() {
@@ -35,7 +31,7 @@ function initQuestions() {
     return false;
   } // if invalid value entered, return
   
-  userPreference =[];
+  userPreference =[]; //added this empty array so if following conditions are met, corresponding var will be added to array
   var hasLowerCase = confirm ("Do you want to include lowercase?");
   var hasUpperCase = confirm ("Do you want to include uppercase?");
   var hasSpecial = confirm ("Do you want to include special characters?");
